@@ -1,0 +1,163 @@
+*,
+h1 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(18, 26, 34);
+  color: white;
+}
+
+main {
+  height: min(100vh, 756px);
+  width: min(100vw, 960px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.068);
+  border-radius: 10%;
+}
+header {
+  flex: 1;
+  text-align: center;
+}
+h1 {
+  font-family: "Lexend Giga";
+  font-size: 6rem;
+}
+h1 mark {
+  background: none;
+  color: rgb(141, 59, 59);
+}
+@media screen and (max-width: 626px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+.dice-container {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+}
+.player1,
+.player2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  font-size: 3rem;
+  font-family: "Amatic SC";
+  position: relative;
+}
+.player1 p:first-of-type,
+.player2 p:first-of-type {
+  position: absolute;
+  top: 12%;
+  opacity: 0;
+}
+@media screen and (max-height: 516px) {
+  .player1 p:first-of-type,
+  .player2 p:first-of-type {
+    top: -10px;
+  }
+}
+
+.die {
+  padding: 2%;
+  background: rgb(12, 12, 12);
+  height: 40%;
+  aspect-ratio: 1/1;
+  border-radius: 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-image: url(skull-and-crossbones.png);
+  background-size: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.pip {
+  width: 100%;
+  height: 100%;
+  background: rgb(173, 59, 59);
+  border-radius: 50%;
+}
+.hidden {
+  visibility: hidden;
+}
+
+#button-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#roll-em {
+  padding: 1rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 10px;
+  background: rgb(179, 64, 64);
+  color: rgb(0, 0, 0);
+  font-family: "Permanent Marker";
+  cursor: pointer;
+}
+#roll-em:hover {
+  background: rgb(122, 45, 45);
+}
+#roll-em:active {
+  transform: scale(0.9);
+}
+
+footer {
+  flex: 1;
+  display: flex;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: center;
+  font-family: "Gloria Hallelujah";
+}
+
+.animation {
+  animation: pop 0.3s;
+}
+.animation-crown {
+  animation: crown 0.5s;
+}
+
+@keyframes crown {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pop {
+  0% {
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
